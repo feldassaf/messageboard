@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "3d568ecf-5f36-4088-b5e7-24e36a6192ea",
+		"name": "messageboard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33138873"
+	},
+	"item": [
+		{
+			"name": "auth/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"firstName\":\"test\",\"lastName\":\"user\", \"isActive\":true, \"userName\":\"testuser1\", \"password\":\"somepassword123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "messages/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjgsInNlc3Npb25pZCI6IjcxNjhlMDg1LTU2YWUtNGEwOS04ODk2LTk5YTZkMjhmMDQ5OCIsImlhdCI6MTcwOTc2NzIzNiwiZXhwIjoxNzA5NzcwODM2fQ.PsYnph3nsgXtMDuCMeXxFkBejPTMhGdJvAIEHcRozio",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"some title of a some message\",\"content\":\"this is the message content - hello to you\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "messages/vote",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjgsInNlc3Npb25pZCI6IjcxNjhlMDg1LTU2YWUtNGEwOS04ODk2LTk5YTZkMjhmMDQ5OCIsImlhdCI6MTcwOTc2NzIzNiwiZXhwIjoxNzA5NzcwODM2fQ.PsYnph3nsgXtMDuCMeXxFkBejPTMhGdJvAIEHcRozio",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"voteUp\":true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/messages/14/vote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"14",
+						"vote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "messages/delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjgsInNlc3Npb25pZCI6ImU3NWQyODhhLTU5MjctNDRmOC04OGMzLTdhYTBhZWU3NDQ1YSIsImlhdCI6MTcwOTc2NzM1NCwiZXhwIjoxNzA5NzcwOTU0fQ.jXWuwdco1aWQFG3gF0v-ymKCKe02tpSO3tUbkDHHymw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/messages/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"testuser1\", \"password\": \"somepassword123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInNlc3Npb25pZCI6IjE5NzkwYjI5LWQ5NjUtNDRkOC04MTk1LWMwNWIwZjZmOGRhMyIsImlhdCI6MTcwOTc1ODQyOSwiZXhwIjoxNzA5NzYyMDI5fQ.36jsiAJD9-phM3EhOwaIvY9K2_gkgU9Stuk_FUCWOX8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "messages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user/messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInNlc3Npb25pZCI6ImZiNmRjMTM2LTVkMWItNDE1Yy05N2JiLTRkNTAwMThmNDNhYiIsImlhdCI6MTcwOTc2MjI5MSwiZXhwIjoxNzA5NzY1ODkxfQ.AYiy_zqu8XxyyigMj6QGNhGu6aseZChSTTJ9SdusGqc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health probe",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjcsInNlc3Npb25pZCI6ImZiNmRjMTM2LTVkMWItNDE1Yy05N2JiLTRkNTAwMThmNDNhYiIsImlhdCI6MTcwOTc2MjI5MSwiZXhwIjoxNzA5NzY1ODkxfQ.AYiy_zqu8XxyyigMj6QGNhGu6aseZChSTTJ9SdusGqc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
